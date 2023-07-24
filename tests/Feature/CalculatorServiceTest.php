@@ -21,6 +21,7 @@ class CalculatorServiceTest extends TestCase
     /**
      * Test add operation.
      * 
+     * @group calculator
      * @dataProvider additionDataProvider
      * @return void
      */
@@ -57,6 +58,7 @@ class CalculatorServiceTest extends TestCase
     /**
      * Test subtract operation.
      * 
+     * @group calculator
      * @dataProvider subtractionDataProvider
      * @return void
      */
@@ -87,6 +89,7 @@ class CalculatorServiceTest extends TestCase
     /**
      * Test multiply operation.
      * 
+     * @group calculator
      * @dataProvider multiplicationDataProvider
      * @return void
      */
@@ -114,6 +117,7 @@ class CalculatorServiceTest extends TestCase
     /**
      * Test divide operation.
      * 
+     * @group calculator
      * @dataProvider divisionDataProvider
      * @return void
      */
@@ -146,6 +150,7 @@ class CalculatorServiceTest extends TestCase
     /**
      * Test divide operation.
      * 
+     * @group calculator
      * @dataProvider divisionByZeroDataProvider
      * @return void
      */
@@ -158,6 +163,7 @@ class CalculatorServiceTest extends TestCase
     /**
      * Data provider for testing division by zero.
      * 
+     * @group calculator
      * @return array
      */
     public function divisionByZeroDataProvider()
@@ -173,6 +179,7 @@ class CalculatorServiceTest extends TestCase
     /**
      * Test power operation.
      * 
+     * @group calculator
      * @dataProvider powerDataProvider
      * @return void
      */
@@ -198,6 +205,7 @@ class CalculatorServiceTest extends TestCase
     /**
      * Test percentage operation.
      * 
+     * @group calculator
      * @dataProvider percentageDataProvider
      * @return void
      */
@@ -221,6 +229,7 @@ class CalculatorServiceTest extends TestCase
     /**
      * Test average operation.
      * 
+     * @group calculator
      * @dataProvider averageDataProvider
      * @return void
      */

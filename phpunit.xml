@@ -12,6 +12,12 @@
             <directory>tests/Feature</directory>
         </testsuite>
     </testsuites>
+    <groups>
+        <include>
+            <group>calculator</group>
+            <group>routes</group>
+        </include>
+    </groups>
     <source>
         <include>
             <directory>app</directory>
