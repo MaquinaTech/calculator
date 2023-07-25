@@ -13,9 +13,10 @@ return new class extends Migration
     {
         Schema::create('operations', function (Blueprint $table) {
             $table->id();
-            $table->string('operation'); // Por ejemplo: add, subtract, multiply, divide, etc.
-            $table->decimal('operatorA', 8, 2);
-            $table->decimal('operatorB', 8, 2);
+            $table->string('operation');
+            $table->decimal('operatorA', 10, 5);
+            $table->decimal('operatorB', 10, 5);
+            $table->decimal('result', 10, 5);
             $table->timestamps();
         });
     }

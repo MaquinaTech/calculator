@@ -5,6 +5,14 @@ use App\Models\Operation;
 
 class CalculatorService
 {
+
+    /**
+     * Valid operations.
+     *
+     * @var array
+     */
+    protected $validOperations = ['add', 'subtract', 'multiply', 'divide', 'power', 'percentage', 'average'];
+
     /**
      * Perform addition.
      *
@@ -149,6 +157,51 @@ class CalculatorService
           throw new \InvalidArgumentException("Invalid number, please enter a valid number.");
         }
         return (float) $number;
+    }
+
+    /**
+     * Check if operation is valid.
+     * 
+     * @param string $operation
+     * @return bool
+     * @throws \InvalidArgumentException When invalid operation is provided
+     */
+    public function isValidOperation($operation)
+    {
+        if (!in_array($operation, $this->validOperations)) {
+            throw new \InvalidArgumentException("Invalid operation, please enter a valid operation.");
+        }
+        return true;
+        
+    }
+
+    /**
+     * Save operation in database.
+     *
+     * @param float|int $operatorA
+     * @param float|int $operatorB
+     * @param string $operation
+     * @param float|int $result
+     * @return void
+     * @throws \InvalidArgumentException When invalid operation is provided or invalid number is provided
+     */
+    public function saveOperation($operatorA, $operatorB, $operation, $result)
+    {
+        // Control comma and dot in numbers.
+        $operatorA = $this->normalizeNumber($operatorA);
+        $operatorB = $this->normalizeNumber($operatorB);
+        $result = $this->normalizeNumber($result);
+
+        // Control valid operation
+        $this->isValidOperation($operation);
+
+        // Save operation in database
+        Operation::create([
+            'operation' => $operation,
+            'operatorA' => $operatorA,
+            'operatorB' => $operatorB,
+            'result' => $result,
+        ]);
     }
 
 

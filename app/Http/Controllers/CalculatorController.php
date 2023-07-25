@@ -30,6 +30,10 @@ class CalculatorController extends Controller
             return response()->json(['error' => $e->getMessage()], 400);
         }
 
+        // Save operation in database
+        $this->calculatorService->saveOperation($operatorA, $operatorB, 'add', $result);
+
+
         return response()->json(['result' => $result]);
     }
 
@@ -48,6 +52,10 @@ class CalculatorController extends Controller
         } catch (\InvalidArgumentException $e) {
             return response()->json(['error' => $e->getMessage()], 400);
         }
+
+        // Save operation in database
+        $this->calculatorService->saveOperation($operatorA, $operatorB, 'subtract', $result);
+
         return response()->json(['result' => $result]);
     }
 
@@ -66,6 +74,10 @@ class CalculatorController extends Controller
         } catch (\InvalidArgumentException $e) {
             return response()->json(['error' => $e->getMessage()], 400);
         }
+
+        // Save operation in database
+        $this->calculatorService->saveOperation($operatorA, $operatorB, 'multiply', $result);
+
         return response()->json(['result' => $result]);
     }
 
@@ -81,10 +93,14 @@ class CalculatorController extends Controller
     {
         try {
             $result = $this->calculatorService->divide($operatorA, $operatorB);
-            return response()->json(['result' => $result]);
         } catch (\InvalidArgumentException $e) {
             return response()->json(['error' => $e->getMessage()], 400);
         }
+
+        // Save operation in database
+        $this->calculatorService->saveOperation($operatorA, $operatorB, 'divide', $result);
+        
+        return response()->json(['result' => $result]);
     }
 
     /**
@@ -102,6 +118,10 @@ class CalculatorController extends Controller
         } catch (\InvalidArgumentException $e) {
             return response()->json(['error' => $e->getMessage()], 400);
         }
+
+        // Save operation in database
+        $this->calculatorService->saveOperation($operatorA, $operatorB, 'power', $result);
+
         return response()->json(['result' => $result]);
     }
 
@@ -120,6 +140,10 @@ class CalculatorController extends Controller
         } catch (\InvalidArgumentException $e) {
             return response()->json(['error' => $e->getMessage()], 400);
         }
+
+        // Save operation in database
+        $this->calculatorService->saveOperation($operatorA, $operatorB, 'percentage', $result);
+
         return response()->json(['result' => $result]);
     }
 
@@ -138,6 +162,10 @@ class CalculatorController extends Controller
         } catch (\InvalidArgumentException $e) {
             return response()->json(['error' => $e->getMessage()], 400);
         }
+
+        // Save operation in database
+        $this->calculatorService->saveOperation($operatorA, $operatorB, 'average', $result);
+
         return response()->json(['result' => $result]);
     }
 
