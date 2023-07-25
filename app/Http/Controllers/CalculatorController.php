@@ -14,6 +14,14 @@ class CalculatorController extends Controller
         $this->calculatorService = $calculatorService;
     }
 
+    /**
+     * Perform addition
+     * 
+     * @param float|int $a
+     * @param float|int $b
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \InvalidArgumentException When invalid number is provided
+     */
     public function add($operatorA, $operatorB)
     {
         try {
@@ -25,6 +33,14 @@ class CalculatorController extends Controller
         return response()->json(['result' => $result]);
     }
 
+    /**
+     * Perform subtraction.
+     * 
+     * @param float|int $a
+     * @param float|int $b
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \InvalidArgumentException When invalid number is provided
+     */
     public function subtract($operatorA, $operatorB)
     {
         try {
@@ -35,6 +51,14 @@ class CalculatorController extends Controller
         return response()->json(['result' => $result]);
     }
 
+    /**
+     * Perform multiplication.
+     * 
+     * @param float|int $a
+     * @param float|int $b
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \InvalidArgumentException When invalid number is provided
+     */
     public function multiply($operatorA, $operatorB)
     {
         try{
@@ -45,6 +69,14 @@ class CalculatorController extends Controller
         return response()->json(['result' => $result]);
     }
 
+    /**
+     * Perform division.
+     * 
+     * @param float|int $a
+     * @param float|int $b
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \InvalidArgumentException When invalid number is provided
+     */
     public function divide($operatorA, $operatorB)
     {
         try {
@@ -55,6 +87,14 @@ class CalculatorController extends Controller
         }
     }
 
+    /**
+     * Perform power.
+     * 
+     * @param float|int $a
+     * @param float|int $b
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \InvalidArgumentException When invalid number is provided
+     */
     public function power($operatorA, $operatorB)
     {
         try {
@@ -65,6 +105,14 @@ class CalculatorController extends Controller
         return response()->json(['result' => $result]);
     }
 
+    /**
+     * Perform percentage.
+     * 
+     * @param float|int $a
+     * @param float|int $b
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \InvalidArgumentException When invalid number is provided
+     */
     public function percentage($operatorA, $operatorB)
     {   
         try {
@@ -75,6 +123,14 @@ class CalculatorController extends Controller
         return response()->json(['result' => $result]);
     }
 
+    /**
+     * Perform average.
+     * 
+     * @param float|int $a
+     * @param float|int $b
+     * @return \Illuminate\Http\JsonResponse
+     * @throws \InvalidArgumentException When invalid number is provided
+     */
     public function average($operatorA, $operatorB)
     {
         try {
