@@ -169,4 +169,16 @@ class CalculatorController extends Controller
         return response()->json(['result' => $result]);
     }
 
+    /**
+     * Get all operations.
+     * 
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getOperations()
+    {
+        $operations = $this->calculatorService->getOperations();
+
+        return response()->json(['operations' => $operations]);
+    }
+
 }

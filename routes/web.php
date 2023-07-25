@@ -33,3 +33,6 @@ Route::get('/power/{operatorA}/{operatorB}', [CalculatorController::class, 'powe
 Route::get('/percentage/{operatorA}/{operatorB}', [CalculatorController::class, 'percentage']);
 // average
 Route::get('/average/{operatorA}/{operatorB}', [CalculatorController::class, 'average']);
+
+// Get all operations
+Route::get('/operations', [CalculatorController::class, 'getOperations']);

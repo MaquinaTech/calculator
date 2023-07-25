@@ -204,5 +204,15 @@ class CalculatorService
         ]);
     }
 
+    /**
+     * Get all operations.
+     *
+     * @return \Illuminate\Database\Eloquent\Collection
+     */
+    public function getOperations()
+    {
+        return Operation::all();
+    }
+
 
 }
