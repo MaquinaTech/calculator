@@ -16,19 +16,32 @@ class CalculatorController extends Controller
 
     public function add($operatorA, $operatorB)
     {
-        $result = $this->calculatorService->add($operatorA, $operatorB);
+        try {
+            $result = $this->calculatorService->add($operatorA, $operatorB);
+        } catch (\InvalidArgumentException $e) {
+            return response()->json(['error' => $e->getMessage()], 400);
+        }
+
         return response()->json(['result' => $result]);
     }
 
     public function subtract($operatorA, $operatorB)
     {
-        $result = $this->calculatorService->subtract($operatorA, $operatorB);
+        try {
+            $result = $this->calculatorService->subtract($operatorA, $operatorB);
+        } catch (\InvalidArgumentException $e) {
+            return response()->json(['error' => $e->getMessage()], 400);
+        }
         return response()->json(['result' => $result]);
     }
 
     public function multiply($operatorA, $operatorB)
     {
-        $result = $this->calculatorService->multiply($operatorA, $operatorB);
+        try{
+            $result = $this->calculatorService->multiply($operatorA, $operatorB);
+        } catch (\InvalidArgumentException $e) {
+            return response()->json(['error' => $e->getMessage()], 400);
+        }
         return response()->json(['result' => $result]);
     }
 
@@ -42,23 +55,33 @@ class CalculatorController extends Controller
         }
     }
 
-    // Implementa aquí otros métodos para el resto de operaciones matemáticas (power, percentage, average, etc.)
-
     public function power($operatorA, $operatorB)
     {
-        $result = $this->calculatorService->power($operatorA, $operatorB);
+        try {
+            $result = $this->calculatorService->power($operatorA, $operatorB);
+        } catch (\InvalidArgumentException $e) {
+            return response()->json(['error' => $e->getMessage()], 400);
+        }
         return response()->json(['result' => $result]);
     }
 
     public function percentage($operatorA, $operatorB)
-    {
-        $result = $this->calculatorService->percentage($operatorA, $operatorB);
+    {   
+        try {
+            $result = $this->calculatorService->percentage($operatorA, $operatorB);
+        } catch (\InvalidArgumentException $e) {
+            return response()->json(['error' => $e->getMessage()], 400);
+        }
         return response()->json(['result' => $result]);
     }
 
     public function average($operatorA, $operatorB)
     {
-        $result = $this->calculatorService->average($operatorA, $operatorB);
+        try {
+            $result = $this->calculatorService->average($operatorA, $operatorB);
+        } catch (\InvalidArgumentException $e) {
+            return response()->json(['error' => $e->getMessage()], 400);
+        }
         return response()->json(['result' => $result]);
     }
 

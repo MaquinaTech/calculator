@@ -50,13 +50,28 @@ class OperationsCommand extends Command
 
         switch ($operation) {
             case 'add':
-                $result = $this->calculatorService->add($operatorA, $operatorB);
+                try {
+                    $result = $this->calculatorService->add($operatorA, $operatorB);
+                } catch (\InvalidArgumentException $e) {
+                    $this->error($e->getMessage());
+                    return 1;
+                }
                 break;
             case 'subtract':
-                $result = $this->calculatorService->subtract($operatorA, $operatorB);
+                try {
+                    $result = $this->calculatorService->subtract($operatorA, $operatorB);
+                } catch (\InvalidArgumentException $e) {
+                    $this->error($e->getMessage());
+                    return 1;
+                }
                 break;
             case 'multiply':
-                $result = $this->calculatorService->multiply($operatorA, $operatorB);
+                try {
+                    $result = $this->calculatorService->multiply($operatorA, $operatorB);
+                } catch (\InvalidArgumentException $e) {
+                    $this->error($e->getMessage());
+                    return 1;
+                }
                 break;
             case 'divide':
                 try {
@@ -67,13 +82,28 @@ class OperationsCommand extends Command
                 }
                 break;
             case 'power':
-                $result = $this->calculatorService->power($operatorA, $operatorB);
+                try {
+                    $result = $this->calculatorService->power($operatorA, $operatorB);
+                } catch (\InvalidArgumentException $e) {
+                    $this->error($e->getMessage());
+                    return 1;
+                }
                 break;
             case 'percentage':
-                $result = $this->calculatorService->percentage($operatorA, $operatorB);
+                try {
+                    $result = $this->calculatorService->percentage($operatorA, $operatorB);
+                } catch (\InvalidArgumentException $e) {
+                    $this->error($e->getMessage());
+                    return 1;
+                }
                 break;
             case 'average':
-                $result = $this->calculatorService->average($operatorA, $operatorB);
+                try {
+                    $result = $this->calculatorService->average($operatorA, $operatorB);
+                } catch (\InvalidArgumentException $e) {
+                    $this->error($e->getMessage());
+                    return 1;
+                }
                 break;
             default:
                 $this->error("Invalid operation. Available operations: add, subtract, multiply, divide, power, percentage, average");
