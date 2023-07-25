@@ -52,9 +52,9 @@ Ejemplo de uso de comando artisan con negativos:
   1. Suma: `php artisan operations 5 -- -5 add`  => Resultado: 0
 
 ## Pruebas
-Para ejecutar todas las pruebas unitarias, ejecutar el comando `php artisan test`
+Para ejecutar todas las pruebas unitarias, ejecutar el comando `php artisan test`.
 Existen dos grupos de pruebas: `calculator` y `routes`.
-Para ejecutar un grupo de pruebas en específico, ejecutar el comando `php artisan test --group {groupName}`
+Para ejecutar un grupo de pruebas en específico, ejecutar el comando `php artisan test --group {groupName}`.
 
 ## Plus
 La aplicacion incluye un registro de operaciones realizadas en la BD, que se puede consultar en la ruta `http://localhost:8000/operations`
@@ -85,7 +85,7 @@ Algunas posibles mejoras que se podrían considerar para futuras versiones inclu
   Ampliar las pruebas unitarias y agregar pruebas de integración para garantizar el correcto funcionamiento de todas las funcionalidades de la aplicación.
 
 ## Contacto
-Cualquier duda o comentario, favor de contactarme a través de mi correo electrónico: nicolopezdelerma@gmail.com`
+Cualquier duda o comentario, favor de contactarme a través de mi correo electrónico: nicolopezdelerma@gmail.com
 
 ## Contribuciones
 Este proyecto es solo una muestra de mi trabajo y no acepta contribuciones. Si tienes sugerencias o comentarios, no dudes en comunicármelos.
