@@ -84,6 +84,10 @@ Algunas posibles mejoras que se podrían considerar para futuras versiones inclu
   7. **Mejora de Pruebas**: 
   Ampliar las pruebas unitarias y agregar pruebas de integración para garantizar el correcto funcionamiento de todas las funcionalidades de la aplicación.
 
+  8. **Interfaz de Usuario**:
+  Desarrollar una interfaz de usuario amigable y accesible para que los usuarios puedan realizar operaciones matemáticas de forma visual e intuitiva. Esto permitiría que la aplicación sea más accesible
+  para aquellos que no estén familiarizados con el uso de API o comandos de consola.     
+
 ## Contacto
 Cualquier duda o comentario, favor de contactarme a través de mi correo electrónico: nicolopezdelerma@gmail.com
 
