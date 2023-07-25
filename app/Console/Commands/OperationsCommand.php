@@ -41,6 +41,7 @@ class OperationsCommand extends Command
      * Execute the console command.
      * 
      * @return int
+     * @throws \InvalidArgumentException When invalid operation is provided
      */
     public function handle()
     {
